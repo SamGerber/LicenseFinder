@@ -117,11 +117,11 @@ module LicenseFinder
 
     class ElmProject < Project
       def add_dep
-        add_to_file("elm-package.json", '{"dependencies" : {"elm-lang/core": "5.1.1 <= v <= 5.1.1"}}')
+        install_fixture("elm-package.json")
       end
 
       def install
-        shell_out("elm-package install 2>/dev/null")
+        shell_out("elm-package install -y 2>/dev/null")
       end
     end
 
