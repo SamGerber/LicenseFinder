@@ -73,6 +73,9 @@ ENV PATH=/usr/local/rvm/bin:$PATH
 # install bundler
 RUN bash -lc "rvm install 2.4.1 --default && gem install bundler"
 
+# install elm
+RUN npm install -g elm --unsafe-perm=true --allow-root
+
 # install license_finder
 RUN bash -lc "git clone https://github.com/pivotal/LicenseFinder /LicenseFinder && cd /LicenseFinder && bundle install -j4 && rake install"
 
