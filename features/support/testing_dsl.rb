@@ -115,6 +115,16 @@ module LicenseFinder
       end
     end
 
+    class ElmProject < Project
+      def add_dep
+        add_to_file("elm-package.json", '{"dependencies" : {"elm-lang/core": "5.1.1 <= v <= 5.1.1"}}')
+      end
+
+      def install
+        shell_out("elm-package install 2>/dev/null")
+      end
+    end
+
     class NpmProject < Project
       def add_dep
         add_to_file("package.json", '{"dependencies" : {"http-server": "0.6.1"}}')
