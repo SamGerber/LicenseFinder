@@ -18,7 +18,7 @@ $ docker run -it licensefinder/license_finder /bin/bash --login
 # inside the container...
 
 $ cd /LicenseFinder
-$ rake
+$ bundle exec rake
 ```
 
 ## Adding Package Managers
